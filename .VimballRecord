@@ -1,0 +1,2 @@
+getscript.vba: call delete('/home/louis/.vim/plugin/getscriptPlugin.vim')|call delete('/home/louis/.vim/autoload/getscript.vim')|call delete('/home/louis/.vim/GetLatest/GetLatestVimScripts.dist')|call delete('/home/louis/.vim/doc/pi_getscript.txt')
+gvcolors.vba: call delete('/home/louis/.vim/plugin/gvcolors.vim')|call delete('/home/louis/.vim/doc/gvcolors.txt')
