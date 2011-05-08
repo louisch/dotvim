@@ -28,3 +28,6 @@
 [submodule "bundle/lustyjuggler"]
 	path = bundle/lustyjuggler
 	url = git://github.com/vim-scripts/LustyJuggler.git
+[submodule "bundle/python"]
+	path = bundle/python
+	url = git://github.com/vim-scripts/python.vim--Vasiliev.git
