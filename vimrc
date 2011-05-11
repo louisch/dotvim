@@ -75,12 +75,39 @@ set t_vb=
 set tm=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+set nowb
+set noswapfile
+
+"Persistent undo
+try
+    set undodir=~/.vim_runtime/undodir
+    set undofile
+catch
+endtry
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+set nowb
+set noswapfile
+
+"Persistent undo
+try
+    set undodir=~/.vim/undodir
+    set undofile
+catch
+endtry
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable "Enable syntax highlight
-
-" Set to the Molokai color scheme
-colorscheme molokai
 
 set encoding=utf8
 try
@@ -193,11 +220,11 @@ au BufNewFile,BufRead *.mako set ft=mako
 " => Minibuffer plugin
 """"""""""""""""""""""""""""""
 let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 2
+let g:miniBufExplorerMoreThanOne = 1
 let g:miniBufExplModSelTarget = 0
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
+let g:miniBufExplVSplit = 18
 let g:miniBufExplSplitBelow=1
 
 let g:bufExplorerSortBy = "name"
@@ -217,3 +244,7 @@ map <leader>m :MRU<CR>
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight = 15
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
+
+""""""""""""""""""""""""""""""
+
+

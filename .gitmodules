@@ -31,3 +31,6 @@
 [submodule "bundle/python"]
 	path = bundle/python
 	url = git://github.com/vim-scripts/python.vim--Vasiliev.git
+[submodule "bundle/vimball"]
+	path = bundle/vimball
+	url = git://github.com/vim-scripts/Vimball.git
