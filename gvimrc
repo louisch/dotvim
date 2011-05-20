@@ -2,7 +2,7 @@
 colorscheme molokai
 
 " Logical size of GVim window
-set lines=40 columns=90
+set lines=40 columns=105
 
 " Don't display the toolbar
 set guioptions-=T
@@ -13,3 +13,5 @@ if has('mac')
 elseif has('unix')
     set guifont=Inconsolata\ Medium\ 12
 endif
+
+autocmd BufRead,BufNew :call UMiniBufExplorer

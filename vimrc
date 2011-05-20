@@ -21,10 +21,7 @@ set autoread
 let mapleader=','
 
 " Saving shortcut
-nmap <C-s> :w!<cr>
-
-" Saves when focus is lost
-au FocusLost * :wa
+nmap <leader>w :w!<cr>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
@@ -35,6 +32,19 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Turns modelines off
 set modelines=0
+
+" Set the formatoptions (See :help fo-table)
+set formatoptions+="a"
+
+" Open lines and exit
+map <leader>o o<Esc>
+map <leader>O O<Esc>
+
+" Shortcut for closing windows
+map <leader>x :close<cr>
+
+" Shortcut for closing everything
+map <leader>q :qa!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -73,21 +83,6 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git anyway...
-set nobackup
-set nowb
-set noswapfile
-
-"Persistent undo
-try
-    set undodir=~/.vim_runtime/undodir
-    set undofile
-catch
-endtry
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -169,10 +164,10 @@ nnoremap j gj
 nnoremap k gk
 
 " Mappings for tabs
-map <C-t> :tabnew<cr>
-map <C-Tab> :tabnext<cr>
-map <C-S-Tab> :tabprevious<cr>
-map <C-w> :tabclose<cr>
+map <leader>n :tabnew<cr>
+map <leader><Tab> :tabnext<cr>
+map <leader><s-Tab> :tabprevious<cr>
+map <leader>k :tabclose!<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -228,8 +223,6 @@ let g:miniBufExplVSplit = 18
 let g:miniBufExplSplitBelow=1
 
 let g:bufExplorerSortBy = "name"
-
-autocmd BufRead,BufNew :call UMiniBufExplorer
 
 map <leader>u :TMiniBufExplorer<cr>
 
