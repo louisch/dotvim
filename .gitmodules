@@ -43,3 +43,6 @@
 [submodule "bundle/pyflakes"]
 	path = bundle/pyflakes
 	url = git://github.com/vim-scripts/pyflakes.vim.git
+[submodule "bundle/python-complete"]
+	path = bundle/python-complete
+	url = git://github.com/vim-scripts/pythoncomplete.git
