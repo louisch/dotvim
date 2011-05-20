@@ -34,3 +34,12 @@
 [submodule "bundle/vimball"]
 	path = bundle/vimball
 	url = git://github.com/vim-scripts/Vimball.git
+[submodule "bundle/python-docs"]
+	path = bundle/python-docs
+	url = git://github.com/vim-scripts/Python-3.x-Standard-Library-Reference.git
+[submodule "bundle/py-jump"]
+	path = bundle/py-jump
+	url = git://github.com/vim-scripts/py_jump.vim.git
+[submodule "bundle/pyflakes"]
+	path = bundle/pyflakes
+	url = git://github.com/vim-scripts/pyflakes.vim.git
