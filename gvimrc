@@ -14,4 +14,7 @@ elseif has('unix')
     set guifont=Inconsolata\ Medium\ 12
 endif
 
-autocmd BufRead,BufNew :call UMiniBufExplorer
+" If GUI is running call MiniBufExpl
+if has("gui_running")
+    autocmd BufRead,BufNew :call UMiniBufExplorer
+endif

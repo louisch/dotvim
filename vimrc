@@ -1,3 +1,7 @@
+" Most is copied from http://amix.dk/vim/vimrc.html
+" Plugins included:
+" > minibufexpl.vim
+
 set nocompatible
 
 filetype off
@@ -34,7 +38,7 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 set modelines=0
 
 " Set the formatoptions (See :help fo-table)
-set formatoptions+="a"
+set formatoptions+=oqaw
 
 " Open lines and exit
 map <leader>o o<Esc>
@@ -55,7 +59,7 @@ set so=999
 set wildmenu "Turn on Wild Menu
 
 set ruler "Always show current position
-set relativenumber "These count from the current line
+set relativenumber "Line numbers that count from the current line
 
 set cmdheight=2 "The commandbar height
 
@@ -124,9 +128,10 @@ set smarttab
 set lbr
 set tw=79
 
-set ai "Auto indent
-set si "Smart indet
-set wrap "Wrap lines
+set autoindent "Auto indent
+set cindent "Cindent
+set cinkeys+=0={,0=},0=),0=#
+set wrap "Wrap lines 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Command mode related
@@ -170,7 +175,7 @@ map <leader><s-Tab> :tabprevious<cr>
 map <leader>k :tabclose!<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
+map <leader>d :cd %:p:h<cr>
 
 """"""""""""""""""""""""""""""
 " => Statusline
@@ -179,7 +184,10 @@ map <leader>cd :cd %:p:h<cr>
 set laststatus=2
 
 " Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+" First part is the file name, including flags for paste-mode, read-only etc.
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w
+              \\ \ CWD:\ %r%{CurDir()}%h
+              \\ \ \ Line:\ %l/ %L:%c
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
