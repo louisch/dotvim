@@ -1,6 +1,6 @@
 " Most is copied from http://amix.dk/vim/vimrc.html
-" Plugins included:
-" > minibufexpl.vim
+" Edited for some of my own preferences, with some other tricks from around the 
+" internet.
 
 set nocompatible
 
@@ -150,6 +150,9 @@ cnoremap <C-K> <C-U>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
+" A mapping to save with sudo when you forget to use it.
+cmap w!! %!sudo tee > /dev/null %
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,7 +190,7 @@ set laststatus=2
 " First part is the file name, including flags for paste-mode, read-only etc.
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w
               \\ \ CWD:\ %r%{CurDir()}%h
-              \\ \ \ Line:\ %l/ %L:%c
+              \\ \ \ Line:\ %l/%L\:%c
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
