@@ -27,9 +27,11 @@ let mapleader=','
 " Saving shortcut
 nmap <leader>w :w!<cr>
 
-" Quickly edit/reload the vimrc file
+" Quickly edit/reload the vimrc/gvimrc files.
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
+nmap <silent> <leader>ge :e $MYGVIMRC<CR>
+nmap <silent> <leader>gs :so $MYGVIMRC<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
