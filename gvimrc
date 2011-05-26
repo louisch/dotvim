@@ -16,5 +16,5 @@ endif
 
 " If GUI is running call MiniBufExpl window
 if has("gui_running")
-    autocmd BufRead,BufNew :call UMiniBufExplorer
+    autocmd BufNew :call UMiniBufExplorer
 endif
