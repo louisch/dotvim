@@ -216,6 +216,28 @@ nmap <silent> <leader>s :set spell!<cr>
 set spelllang=en_gb
 
 """"""""""""""""""""""""""""""
+" => GUI section
+""""""""""""""""""""""""""""""
+" Some GUI specific stuff.
+if has("gui_running")
+    " Theme
+    colorscheme molokai
+
+    " Logical size of GVim window
+    set lines=40 columns=105
+
+    " Don't display the toolbar
+    set guioptions-=T
+
+    " Font
+    if has('mac')
+        set guifont=Monaco:h13
+    elseif has('unix')
+        set guifont=Inconsolata\ Medium\ 12
+    endif
+endif
+
+""""""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
@@ -223,6 +245,11 @@ au FileType python syn keyword pythonDecorator True None False self
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
+
+" If GUI is running call MiniBufExpl window
+if has("gui_running")
+    autocmd BufNew :call UMiniBufExplorer
+endif
 
 """"""""""""""""""""""""""""""
 " => Minibuffer plugin
