@@ -47,7 +47,7 @@ map <leader>o o<Esc>
 map <leader>O O<Esc>
 
 " Shortcut for closing windows
-map <leader>x :close<cr>
+map <leader>c :close<cr>
 
 " Shortcut for closing everything
 map <leader>q :qa!<cr>
@@ -179,7 +179,7 @@ map <leader><Tab> :tabnext<cr>
 map <leader><s-Tab> :tabprevious<cr>
 map <leader>k :tabclose!<cr>
 
-" When pressing <leader>cd switch to the directory of the open buffer
+" When pressing <leader>d switch to the directory of the open buffer
 map <leader>d :cd %:p:h<cr>
 
 """"""""""""""""""""""""""""""
