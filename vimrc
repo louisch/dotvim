@@ -246,11 +246,6 @@ au FileType python syn keyword pythonDecorator True None False self
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
-" If GUI is running call MiniBufExpl window
-if has("gui_running")
-    autocmd BufNew :call UMiniBufExplorer
-endif
-
 """"""""""""""""""""""""""""""
 " => Minibuffer plugin
 """"""""""""""""""""""""""""""
