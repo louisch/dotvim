@@ -24,14 +24,13 @@ set autoread
 " Sets the map leader key, used for custom keyboard shortcuts
 let mapleader=','
 
-" Saving shortcut
+" Saving shortcut (including one for a Git write)
 nmap <leader>w :w!<cr>
+nmap <leader>gw :Gwrite<cr>
 
-" Quickly edit/reload the vimrc/gvimrc files.
+" Quickly edit/reload the vimrc files.
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
-nmap <silent> <leader>ge :e $MYGVIMRC<CR>
-nmap <silent> <leader>gs :so $MYGVIMRC<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
@@ -274,5 +273,7 @@ let g:CommandTMaxHeight = 15
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
 
 """"""""""""""""""""""""""""""
-
+" => YankRing
+""""""""""""""""""""""""""""""
+map <leader>y :YRShow<CR>
 
