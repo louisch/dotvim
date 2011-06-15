@@ -49,3 +49,6 @@
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "bundle/pylint"]
+	path = bundle/pylint
+	url = git://github.com/vim-scripts/pylint.vim.git
