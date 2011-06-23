@@ -26,7 +26,6 @@ let mapleader=','
 
 " Saving shortcut (including one for a Git write)
 nmap <leader>w :w!<cr>
-nmap <leader>gw :Gwrite<cr>
 
 " Quickly edit/reload the vimrc files.
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
@@ -127,7 +126,7 @@ set softtabstop=4
 set smarttab
 
 set lbr
-set tw=79
+set textwidth=79
 
 set autoindent "Auto indent
 set cindent "Cindent
@@ -234,6 +233,8 @@ if has("gui_running")
     elseif has('unix')
         set guifont=Inconsolata\ Medium\ 12
     endif
+else
+    colorscheme desert
 endif
 
 """"""""""""""""""""""""""""""
@@ -241,24 +242,21 @@ endif
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
+au FileType python compiler pylint
+au FileType python set foldmethod=indent
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
-""""""""""""""""""""""""""""""
-" => Minibuffer plugin
-""""""""""""""""""""""""""""""
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 1
-let g:miniBufExplModSelTarget = 0
-let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 18
-let g:miniBufExplSplitBelow=1
-
-let g:bufExplorerSortBy = "name"
-
 map <leader>u :TMiniBufExplorer<cr>
+
+""""""""""""""""""""""""""""""
+" => Git section
+""""""""""""""""""""""""""""""
+" Saves to index and working tree.
+nmap <leader>gw :Gwrite<cr>
+" Commit shortcut
+nmap <leader>gc :Gcommit<cr>
 
 """"""""""""""""""""""""""""""
 " => MRU plugin

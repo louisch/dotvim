@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/louis/Coding'
+let g:netrw_dirhist_2='/home/louis/.bash_it'
+let g:netrw_dirhist_3='/etc/modprobe.d'
