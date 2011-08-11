@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/louis/Coding'
 let g:netrw_dirhist_2='/home/louis/.bash_it'
 let g:netrw_dirhist_3='/etc/modprobe.d'
+let g:netrw_dirhist_4='/home/louis/.vim/bundle'
+let g:netrw_dirhist_5='/home/louis/.vim/bundle/snipmate'
+let g:netrw_dirhist_6='/home/louis/.vim/bundle/snipmate/after'
+let g:netrw_dirhist_7='/home/louis/.vim/bundle/snipmate/after/plugin'
