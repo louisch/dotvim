@@ -1,2 +1,2 @@
-# Ignore the undo directory
 undodir/
+.vimrc.swp
