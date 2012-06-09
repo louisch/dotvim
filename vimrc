@@ -33,9 +33,6 @@ nmap <silent> <leader>vs :so $MYVIMRC<CR>
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-" Turns modelines off
-set modelines=0
-
 " Set the formatoptions (See :help fo-table)
 set formatoptions+=oqaw
 
@@ -66,25 +63,27 @@ set hidden "Change buffer - without saving
 
 " Set backspace config
 set backspace=eol,start,indent
+" Wraps moving the cursor left or right with h, l, <Left>, or <Right>
 set whichwrap+=<,>,h,l
 
 set ignorecase "Ignore case when searching
-set smartcase
+set smartcase "Override case ignorance when pattern contains upper characters
 
 set hlsearch "Highlight search things
 
-set incsearch "Make search act like search in modern browsers
+set incsearch "Search will search for the pattern while typing the pattern in
 set nolazyredraw "Don't redraw while executing macros 
 
 set magic "Set magic on, for regular expressions
 
-set showmatch "Show matching bracets when text indicator is over them
+set showmatch "When bracket is inserted, briefly jump to the matching one
 set mat=2 "How many tenths of a second to blink
 
 " No sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
+" Wait 500 milliseconds for a key sequence to complete
 set tm=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,10 +136,6 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maps semi-colon to the colon (for command mode)
 nnoremap ; :
-
-" Maps $c to expand to the edited file's directory
-cno $c e <C-\>eCurrentFileDir("e")<cr>
-cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
 cnoremap <C-A> <Home>
@@ -247,16 +242,6 @@ au FileType python set foldmethod=indent
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
-map <leader>u :TMiniBufExplorer<cr>
-
-""""""""""""""""""""""""""""""
-" => Git section
-""""""""""""""""""""""""""""""
-" Saves to index and working tree.
-nmap <leader>gw :Gwrite<cr>
-" Commit shortcut
-nmap <leader>gc :Gcommit<cr>
-
 """"""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
@@ -268,9 +253,3 @@ map <leader>m :MRU<CR>
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight = 15
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
-
-""""""""""""""""""""""""""""""
-" => YankRing
-""""""""""""""""""""""""""""""
-map <leader>y :YRShow<CR>
-
