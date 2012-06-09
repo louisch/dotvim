@@ -23,8 +23,8 @@ set autoread
 " Sets the map leader key, used for custom keyboard shortcuts
 let mapleader=','
 
-" Saving shortcut (including one for a Git write)
-nmap <leader>w :w!<cr>
+" Saving shortcut
+nmap <leader>w :w<cr>
 
 " Quickly edit/reload the vimrc files.
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
