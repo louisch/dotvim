@@ -22,6 +22,8 @@ Bundle 'tomasr/molokai'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'soli/vim-python-pep8-indent'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
