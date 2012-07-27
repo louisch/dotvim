@@ -5,14 +5,33 @@
 set nocompatible
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Below three lines are required!
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle 'kien/ctrlp.vim'
+Bundle 'tomasr/molokai'
+Bundle 'scrooloose/syntastic'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'soli/vim-python-pep8-indent'
+Bundle 'maxbrunsfeld/vim-yankstack'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=700
 
-" Enable filetype plugin
-filetype plugin on
-filetype indent on
+" Enable filetype detection, plugin, and indent
+filetype plugin indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
