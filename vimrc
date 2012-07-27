@@ -182,6 +182,9 @@ map <C-l> <C-W>l
 " Move between wrapped lines
 nnoremap j gj
 nnoremap k gk
+" Move between physical lines
+nnoremap gj j
+nnoremap gk k
 
 " Mappings for tabs
 map <leader>n :tabnew<cr>
