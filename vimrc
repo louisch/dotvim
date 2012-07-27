@@ -182,9 +182,10 @@ set laststatus=2
 
 " Format the statusline
 " First part is the file name, including flags for paste-mode, read-only etc.
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w
-              \\ \ CWD:\ %r%{CurDir()}%h
-              \\ \ \ Line:\ %l/%L\:%c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w
+"              \\ \ CWD:\ %r%{CurDir()}%h
+"              \\ \ \ Line:\ %l/%L\:%c
+set statusline=%t
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
@@ -253,3 +254,9 @@ map <leader>m :MRU<CR>
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight = 15
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
+
+""""""""""""""""""""""""""""""
+" => Tex
+""""""""""""""""""""""""""""""
+let g:tex_flavor = 'latex'
+set iskeyword+=:
