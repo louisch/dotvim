@@ -20,7 +20,6 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tomasr/molokai'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'soli/vim-python-pep8-indent'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
@@ -203,10 +202,9 @@ set laststatus=2
 
 " Format the statusline
 " First part is the file name, including flags for paste-mode, read-only etc.
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w
-"              \\ \ CWD:\ %r%{CurDir()}%h
-"              \\ \ \ Line:\ %l/%L\:%c
-set statusline=%t
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w
+              \\ \ CWD:\ %r%{CurDir()}%h
+              \\ \ \ Line:\ %l/%L\:%c
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
@@ -235,13 +233,14 @@ set spelllang=en_gb
 " Some GUI specific stuff.
 if has("gui_running")
     " Theme
-    colorscheme molokai
-
-    " Logical size of GVim window
-    set lines=40 columns=105
+    try
+        colorscheme molokai
+    catch
+        colorscheme desert
+    endtry
 
     " Don't display the toolbar
-    set guioptions-=T
+    set guioptions-=mT
 
     " Font
     if has('mac')
@@ -257,23 +256,15 @@ endif
 " => Python section
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
-au FileType python syn keyword pythonDecorator True None False self
-au FileType python compiler pylint
 au FileType python set foldmethod=indent
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
 
 """"""""""""""""""""""""""""""
-" => MRU plugin
+" => CtrlP plugin
 """"""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>m :MRU<CR>
-
-""""""""""""""""""""""""""""""
-" => Command-T
-""""""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 15
+map <C-m> :CtrlPMRUFiles<CR>
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
 
 """"""""""""""""""""""""""""""
