@@ -24,6 +24,7 @@ Bundle 'soli/vim-python-pep8-indent'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'w0ng/vim-hybrid'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -232,15 +233,9 @@ set spelllang=en_gb
 """"""""""""""""""""""""""""""
 " Some GUI specific stuff.
 if has("gui_running")
-    " Theme
-    try
-        colorscheme molokai
-    catch
-        colorscheme desert
-    endtry
-
     " Don't display the toolbar
-    set guioptions-=mT
+    set guioptions-=m
+    set guioptions-=T
 
     " Font
     if has('mac')
@@ -248,9 +243,18 @@ if has("gui_running")
     elseif has('unix')
         set guifont=Inconsolata\ Medium\ 12
     endif
-else
-    colorscheme desert
 endif
+
+""""""""""""""""""""""""""""""
+" => Theme section
+""""""""""""""""""""""""""""""
+try
+    set t_Co=256
+    let g:hybrid_use_Xresources = 1
+    colorscheme hybrid
+catch
+    colorscheme desert
+endtry
 
 """"""""""""""""""""""""""""""
 " => Python section
