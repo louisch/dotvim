@@ -18,7 +18,6 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'kien/ctrlp.vim'
-Bundle 'tomasr/molokai'
 Bundle 'scrooloose/syntastic'
 Bundle 'soli/vim-python-pep8-indent'
 Bundle 'tpope/vim-repeat'
