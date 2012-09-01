@@ -259,6 +259,7 @@ endtry
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
 au FileType python set foldmethod=indent
+au FileType python vertical-resize 85
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
