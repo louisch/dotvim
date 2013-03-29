@@ -4,13 +4,15 @@
 
 set nocompatible
 
+let g:vimdir = "~/.config/vim"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Below three lines are required!
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.config/vim/bundle/vundle/
+call vundle#rc("~/.config/vim/bundle/")
 
 " let Vundle manage Vundle
 " required! 
@@ -48,7 +50,7 @@ nmap <silent> <leader>ve :e $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source ~/.config/vim/vimrc
 
 " Set the formatoptions (See :help fo-table)
 set formatoptions+=oqaw
@@ -113,7 +115,7 @@ set noswapfile
 
 "Persistent undo
 try
-    set undodir=~/.vim/undodir
+    set undodir=~/.config/vim/undodir
     set undofile
 catch
 endtry
@@ -247,12 +249,7 @@ endif
 """"""""""""""""""""""""""""""
 " => Theme section
 """"""""""""""""""""""""""""""
-try
-    let g:hybrid_use_Xresources = 1
-    colorscheme hybrid
-catch
-    colorscheme desert
-endtry
+colorscheme desert
 
 """"""""""""""""""""""""""""""
 " => Python section
