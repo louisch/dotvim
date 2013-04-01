@@ -19,9 +19,11 @@ call vundle#rc("~/.config/vim/bundle/")
 Bundle 'gmarik/vundle'
 
 " Bundles
+Bundle 'guns/vim-clojure-static'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'soli/vim-python-pep8-indent'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
