@@ -20,6 +20,7 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'guns/vim-clojure-static'
+Bundle 'guns/paredit'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'soli/vim-python-pep8-indent'
