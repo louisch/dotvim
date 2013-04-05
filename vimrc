@@ -50,7 +50,9 @@ nnoremap <leader>w :w<cr>
 
 " Quickly edit/reload the vimrc files.
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :so $MYVIMRC<CR>
+nnoremap <silent> <leader>gs :so $MYGVIMRC<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.config/vim/vimrc
