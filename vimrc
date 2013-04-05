@@ -46,11 +46,11 @@ set autoread
 let mapleader=','
 
 " Saving shortcut
-nmap <leader>w :w<cr>
+nnoremap <leader>w :w<cr>
 
 " Quickly edit/reload the vimrc files.
-nmap <silent> <leader>ve :e $MYVIMRC<CR>
-nmap <silent> <leader>vs :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
+nnoremap <silent> <leader>vs :so $MYVIMRC<CR>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.config/vim/vimrc
@@ -59,14 +59,14 @@ autocmd! bufwritepost vimrc source ~/.config/vim/vimrc
 set formatoptions+=oqaw
 
 " Open lines and exit
-map <leader>o o<Esc>
-map <leader>O O<Esc>
+noremap <leader>o o<Esc>
+noremap <leader>O O<Esc>
 
 " Shortcut for closing windows
-map <leader>c :close<cr>
+noremap <leader>c :close<cr>
 
 " Shortcut for closing everything
-map <leader>q :qa!<cr>
+noremap <leader>q :qa!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -167,21 +167,21 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " A mapping to save with sudo when you forget to use it.
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
-map <C-space> ?
-map <silent> <leader><cr> :noh<cr>
+noremap <space> /
+noremap <C-space> ?
+noremap <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " Move between wrapped lines
 nnoremap j gj
@@ -191,13 +191,13 @@ nnoremap gj j
 nnoremap gk k
 
 " Mappings for tabs
-map <leader>n :tabnew<cr>
-map <leader><Tab> :tabnext<cr>
-map <leader><s-Tab> :tabprevious<cr>
-map <leader>k :tabclose!<cr>
+noremap <leader>n :tabnew<cr>
+noremap <leader><Tab> :tabnext<cr>
+noremap <leader><s-Tab> :tabprevious<cr>
+noremap <leader>k :tabclose!<cr>
 
 " When pressing <leader>d switch to the directory of the open buffer
-map <leader>d :cd %:p:h<cr>
+noremap <leader>d :cd %:p:h<cr>
 
 """"""""""""""""""""""""""""""
 " => Statusline
@@ -228,7 +228,7 @@ endfunction
 " => Spelling section
 """"""""""""""""""""""""""""""
 " Toggle spelling on and off
-nmap <silent> <leader>s :set spell!<cr>
+nnoremap <silent> <leader>s :set spell!<cr>
 " Set region to British English
 set spelllang=en_gb
 
@@ -267,7 +267,7 @@ au BufNewFile,BufRead *.mako set ft=mako
 """"""""""""""""""""""""""""""
 " => CtrlP plugin
 """"""""""""""""""""""""""""""
-map <C-m> :CtrlPMRUFiles<CR>
+noremap <C-m> :CtrlPMRUFiles<CR>
 set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
 
 """"""""""""""""""""""""""""""
@@ -275,3 +275,8 @@ set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
 """"""""""""""""""""""""""""""
 let g:tex_flavor = 'latex'
 set iskeyword+=:
+
+""""""""""""""""""""""""""""""
+" => Clojure
+""""""""""""""""""""""""""""""
+au BufNewFile,BufRead *.clj call PareditInitBuffer()
