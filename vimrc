@@ -263,11 +263,14 @@ colorscheme desert
 " => Python section
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
-au FileType python set foldmethod=indent
-au FileType python vertical-resize 85
-
-au BufNewFile,BufRead *.jinja set syntax=htmljinja
-au BufNewFile,BufRead *.mako set ft=mako
+augroup python
+    autocmd!
+    au FileType python set foldmethod=indent
+    au FileType python vertical-resize 85
+    au FileType python call PareditInitBuffer()
+    au BufNewFile,BufRead *.jinja set syntax=htmljinja
+    au BufNewFile,BufRead *.mako set ft=mako
+augroup END
 
 """"""""""""""""""""""""""""""
 " => CtrlP plugin
@@ -280,8 +283,3 @@ set wildignore+=*.o,*.obj,.git,*.pyc,wuala*
 """"""""""""""""""""""""""""""
 let g:tex_flavor = 'latex'
 set iskeyword+=:
-
-""""""""""""""""""""""""""""""
-" => Clojure
-""""""""""""""""""""""""""""""
-au BufNewFile,BufRead *.clj call PareditInitBuffer()
