@@ -70,6 +70,9 @@ noremap <leader>c :close<cr>
 " Shortcut for closing everything
 noremap <leader>q :qa!<cr>
 
+" Shortcut for exiting insert mode
+inoremap jk <esc>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
