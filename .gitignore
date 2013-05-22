@@ -1,2 +1,4 @@
 undodir/
 .vimrc.swp
+bundle/*
+!bundle/vundle
