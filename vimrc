@@ -19,12 +19,13 @@ call vundle#rc("~/.config/vim/bundle/")
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/paredit'
 Bundle 'kien/ctrlp.vim'
+Bundle 'guns/paredit'
 Bundle 'scrooloose/syntastic'
-Bundle 'soli/vim-python-pep8-indent'
+Bundle 'tsaleh/vim-align'
+Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+Bundle 'soli/vim-python-pep8-indent'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'maxbrunsfeld/vim-yankstack'
@@ -72,6 +73,9 @@ noremap <leader>q :qa!<cr>
 
 " Shortcut for exiting insert mode
 inoremap jk <esc>
+
+" Omni-completion
+set omnifunc=syntaxcomplete#Complete
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -144,18 +148,20 @@ set ffs+=unix,dos,mac "Default file types
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set smarttab
+set tabstop=8     " A tab is 8 spaces
+set expandtab     " Always uses spaces instead of tabs
+set softtabstop=4 " Insert 4 spaces when tab is pressed
+set shiftwidth=4  " An indent is 4 spaces
+set smarttab      " Indent instead of tab at start of line
+set shiftround    " Round spaces to nearest shiftwidth multiple
+set nojoinspaces  " Don't convert spaces to tabs
 
 set lbr
 set textwidth=79
 
 set autoindent "Auto indent
-set cindent "Cindent
-set cinkeys+=0={,0=},0=),0=#
+"set cindent "Cindent
+"set cinkeys+=0={,0=},0=),0=#
 set wrap "Wrap lines 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -258,6 +264,15 @@ endif
 " => Theme section
 """"""""""""""""""""""""""""""
 colorscheme desert
+
+"""""""""""""""""""""""""""""
+" => Haskell section
+"""""""""""""""""""""""""""""
+" Recommended:
+" Tabstop 8, expandtab, softtabstop 4, shiftwidth 4, smarttab
+augroup haskell
+    autocmd!
+augroup END
 
 """"""""""""""""""""""""""""""
 " => Python section
