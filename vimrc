@@ -87,6 +87,7 @@ set wildmenu "Turn on Wild Menu
 
 set ruler "Always show current position
 set relativenumber "Line numbers that count from the current line
+set number
 
 set cmdheight=2 "The commandbar height
 
