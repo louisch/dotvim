@@ -86,8 +86,11 @@ set so=999
 set wildmenu "Turn on Wild Menu
 
 set ruler "Always show current position
+" Both kinds of line numbers are set - this enables a combined line numbering 
+" in Vim 7.4, with relativenumber for every line except the current line, which 
+" will use number.
+set number "Line numbers that count from the top of the buffer
 set relativenumber "Line numbers that count from the current line
-set number
 
 set cmdheight=2 "The commandbar height
 
@@ -278,6 +281,8 @@ augroup END
 """"""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
+" Recommended:
+" Tabstop 8, expandtab, softtabstop 4, shiftwidth 4, smarttab
 let python_highlight_all = 1
 augroup python
     autocmd!
