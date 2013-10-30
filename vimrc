@@ -89,8 +89,8 @@ set ruler "Always show current position
 " Both kinds of line numbers are set - this enables a combined line numbering 
 " in Vim 7.4, with relativenumber for every line except the current line, which 
 " will use number.
-set number "Line numbers that count from the top of the buffer
 set relativenumber "Line numbers that count from the current line
+set number "Line numbers that count from the top of the buffer
 
 set cmdheight=2 "The commandbar height
 
